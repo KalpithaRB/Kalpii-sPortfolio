@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalpitha | Writer · Storyteller · Content Agent</title>
+<meta name="description" content="Portfolio of Kalpii: SEO blogs, LinkedIn newsletters, press releases, video scripts and Wattpad fiction.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== COLOURS (edit here to retheme everything) ===== */
+:root{
+  --ink:#16262a; --ink2:#1f3438; --cream:#f6ecd4; --paper:#fffaf0;
+  --gold:#f0b429; --crimson:#cf2c45; --pink:#f28fa8; --sky:#58b0e3; --mint:#3fae92;
+  --head:'Dela Gothic One','Impact',sans-serif; --body:'Outfit',system-ui,sans-serif;
+  --nav:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--ink);color:var(--cream);line-height:1.6;min-height:100vh;overflow-x:hidden;
+  background-image:radial-gradient(rgba(240,180,41,.09) 1.4px,transparent 1.6px);background-size:16px 16px}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);font-weight:400;line-height:1.1}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(14px,4vw,40px);
+  background:rgba(22,38,42,.92);backdrop-filter:blur(8px);border-bottom:3px solid var(--gold)}
+.logo{font-family:var(--head);font-size:1.1rem;display:flex;align-items:center;gap:10px;background:none;border:0;white-space:nowrap}
+.logo i{width:26px;height:26px;border-radius:50%;background:var(--gold);box-shadow:inset -8px -2px 0 var(--ink);display:inline-block}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs button{background:none;border:0;padding:10px 16px;font-weight:600;position:relative;white-space:nowrap;transition:color .25s}
+.tabs button::after{content:"";position:absolute;left:12px;right:12px;bottom:2px;height:4px;background:var(--crimson);transform:skewX(-25deg) scaleX(0);transition:transform .3s}
+.tabs button:hover{color:var(--gold)}
+.tabs button.on{color:var(--gold)}
+.tabs button.on::after,.tabs button:hover::after{transform:skewX(-25deg) scaleX(1)}
+
+/* ===== PAGE WIPE (the signature transition: three slanted panels sweep across) ===== */
+.wipe{position:fixed;inset:0;z-index:100;pointer-events:none;overflow:hidden}
+.wipe b{position:absolute;inset:0 -30%;transform:translateX(-130%) skewX(-18deg)}
+.wipe b:nth-child(1){background:var(--crimson)}
+.wipe b:nth-child(2){background:var(--gold)}
+.wipe b:nth-child(3){background:var(--ink2);display:grid;place-items:center}
+.wipe b:nth-child(3) span{transform:skewX(18deg);font-family:var(--head);font-size:clamp(1.4rem,4vw,2.6rem);color:var(--gold)}
+.wipe.run b{animation:sweep .95s cubic-bezier(.7,0,.3,1) forwards}
+.wipe.run b:nth-child(2){animation-delay:.07s}.wipe.run b:nth-child(3){animation-delay:.14s}
+@keyframes sweep{0%{transform:translateX(-130%) skewX(-18deg)}42%,55%{transform:translateX(0) skewX(-18deg)}100%{transform:translateX(130%) skewX(-18deg)}}
+
+/* ===== SECTIONS ===== */
+main{padding-top:var(--nav)}
+.sec{display:none;min-height:calc(100vh - var(--nav));padding:clamp(28px,5vw,64px) clamp(16px,5vw,64px) 80px;max-width:1240px;margin:auto}
+.sec.active{display:block}
+.rv{opacity:0}
+.sec.active .rv{animation:pop .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*90ms + 650ms)}
+@keyframes pop{from{opacity:0;transform:translateY(26px) rotate(-1deg)}to{opacity:1;transform:none}}
+.sec-head{margin-bottom:34px;max-width:680px}
+.sec-head h2{font-size:clamp(2rem,5vw,3.4rem);display:inline-block;background:var(--gold);color:var(--ink);padding:4px 18px 6px;transform:rotate(-1.5deg);box-shadow:6px 6px 0 var(--crimson)}
+.sec-head p{margin-top:20px;font-size:1.05rem;opacity:.9}
+.tag{font-size:.8rem;font-weight:700;color:var(--gold);display:block;margin-bottom:10px}
+
+/* ===== BUTTONS & STAMPS ===== */
+.btn{display:inline-block;border:3px solid var(--ink);padding:13px 26px;font-weight:700;text-decoration:none;background:var(--gold);color:var(--ink);box-shadow:5px 5px 0 var(--crimson);transition:transform .2s,box-shadow .2s;clip-path:polygon(0 0,100% 0,100% 82%,96% 100%,0 100%)}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--crimson)}
+.btn.alt{background:var(--cream)}
+.stamp{display:inline-block;border:4px double var(--crimson);color:var(--crimson);font-family:var(--head);padding:4px 14px;transform:rotate(-8deg);font-size:1.1rem;letter-spacing:.06em;background:rgba(255,250,240,.08)}
+
+/* ===== HOME ===== */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;min-height:calc(100vh - var(--nav) - 140px)}
+.hero h1{font-size:clamp(2.6rem,7.5vw,5.6rem);margin:14px 0 18px;text-shadow:4px 4px 0 var(--crimson)}
+.hero p.lead{font-size:1.15rem;max-width:520px;margin-bottom:26px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.badge{padding:6px 14px;font-weight:600;font-size:.9rem;color:var(--ink);clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);animation:bob 5s ease-in-out infinite}
+.badge:nth-child(1){background:var(--gold)}.badge:nth-child(2){background:var(--pink);animation-delay:-1.5s}.badge:nth-child(3){background:var(--sky);animation-delay:-3s}.badge:nth-child(4){background:var(--mint);animation-delay:-4s}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.cta{display:flex;gap:16px;flex-wrap:wrap}
+.collage{position:relative;height:min(560px,70vw);min-height:380px}
+.pn{position:absolute;overflow:hidden;border:4px solid var(--cream);box-shadow:8px 8px 0 rgba(0,0,0,.35);transition:transform .4s}
+.pn::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,0,0,.22) 2px,transparent 2.4px);background-size:10px 10px}
+.pn:hover{transform:scale(1.03) rotate(-1deg);z-index:5}
+.pn1{inset:0 25% 38% 0;background:var(--sky);clip-path:polygon(0 0,100% 6%,92% 100%,0 94%)}
+.pn2{inset:14% 0 22% 42%;background:var(--pink);clip-path:polygon(8% 0,100% 0,100% 90%,0 100%);z-index:2}
+.pn3{inset:56% 30% 0 0;background:var(--crimson);clip-path:polygon(0 8%,100% 0,100% 100%,6% 100%)}
+.pn span{position:absolute;z-index:2;font-family:var(--head);color:var(--ink);padding:14px;font-size:clamp(.9rem,2vw,1.3rem);line-height:1.2}
+.pn3 span{color:var(--cream)}
+.moon{position:absolute;right:6%;top:-2%;width:70px;height:70px;border-radius:50%;background:var(--gold);box-shadow:inset -22px -4px 0 var(--ink);z-index:3;animation:bob 6s ease-in-out infinite}
+.collage .stamp{position:absolute;left:34%;bottom:6%;z-index:4}
+.spark{position:absolute;color:var(--gold);font-size:2rem;animation:tw 3s ease-in-out infinite;z-index:3}
+@keyframes tw{50%{transform:scale(1.5) rotate(20deg);opacity:.5}}
+.ticker{margin-top:30px;overflow:hidden;border-block:3px solid var(--gold);background:var(--ink2);transform:rotate(-1deg)}
+.ticker div{display:flex;gap:40px;white-space:nowrap;width:max-content;padding:10px 0;font-family:var(--head);font-size:.95rem;animation:tk 30s linear infinite}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+/* ===== ABOUT ===== */
+.dossier{display:grid;grid-template-columns:320px 1fr;gap:40px;background:var(--cream);color:var(--ink);padding:clamp(20px,4vw,44px);position:relative;border-left:14px solid var(--crimson);box-shadow:10px 10px 0 var(--gold)}
+.dossier .stamp{position:absolute;right:22px;top:18px}
+.drop{aspect-ratio:3/4;border:4px dashed var(--ink);display:grid;place-items:center;text-align:center;padding:16px;cursor:pointer;background:var(--paper) center/cover;transition:background-color .3s,transform .3s;font-weight:600}
+.drop:hover,.drop.over{background-color:var(--gold);transform:rotate(-1.5deg)}
+.drop small{display:block;font-weight:400;opacity:.7}
+.drop.photo{cursor:default}
+.drop.photo:hover,.drop.photo.loaded{background-color:var(--paper);transform:none;border-style:solid}
+.file{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:16px 0 22px;font-size:.95rem}
+.file dt{font-weight:700;color:var(--crimson)}
+.dossier h3{font-size:1.9rem;margin-bottom:8px}
+.dossier p{margin-bottom:12px;max-width:62ch}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+.stat{background:var(--ink2);border:3px solid var(--gold);padding:18px 10px;text-align:center;transition:transform .3s;clip-path:polygon(0 0,100% 0,100% 88%,92% 100%,0 100%)}
+.stat:hover{transform:translateY(-6px)}
+.stat strong{display:block;font-family:var(--head);font-size:clamp(1.6rem,4vw,2.5rem);color:var(--gold)}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.skills span{background:var(--ink);color:var(--cream);padding:4px 12px;font-size:.85rem;font-weight:600}
+
+/* ===== STORIES ===== */
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:30px}
+.book{background:var(--paper);color:var(--ink);display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s;box-shadow:6px 6px 0 rgba(0,0,0,.35);border-bottom:6px solid var(--c)}
+.book:hover{transform:translateY(-10px) rotate(-1.2deg);box-shadow:12px 14px 0 rgba(0,0,0,.35)}
+.cover{aspect-ratio:3/4;background:var(--c);position:relative;display:flex;align-items:flex-end;padding:16px;overflow:hidden}
+.cover::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,0,0,.2) 2px,transparent 2.4px);background-size:10px 10px}
+.cover h3{position:relative;color:var(--ink);font-size:1.45rem;background:var(--paper);padding:6px 10px}
+.cover .stamp{position:absolute;top:12px;right:8px;font-size:.8rem;transform:rotate(8deg);background:var(--paper)}
+.binfo{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.binfo p{font-size:.92rem}
+.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:.8rem;font-weight:700}
+.meta span{background:var(--ink);color:var(--gold);padding:2px 10px}
+.binfo a{margin-top:auto;font-weight:700;color:var(--crimson);text-decoration:none;border-bottom:3px solid var(--gold);align-self:flex-start}
+
+/* ===== WORKS ===== */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;position:relative}
+.filters button{background:var(--ink2);border:3px solid var(--cream);padding:9px 20px;font-weight:700;transition:background .25s,color .25s,transform .25s;clip-path:polygon(6% 0,100% 0,94% 100%,0 100%)}
+.filters button:hover{transform:translateY(-3px)}
+.filters button.on{background:var(--crimson);border-color:var(--crimson)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:26px}
+.card{background:var(--cream);color:var(--ink);padding:22px;text-align:left;border:0;border-top:10px solid var(--c);box-shadow:6px 6px 0 rgba(0,0,0,.35);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;gap:10px;animation:cin .5s both;position:relative}
+.card:hover{transform:translate(-4px,-6px);box-shadow:11px 12px 0 var(--gold)}
+@keyframes cin{from{opacity:0;transform:translateX(40px) skewX(-6deg)}}
+.client{align-self:flex-start;background:var(--crimson);color:var(--paper);font-weight:700;font-size:.8rem;padding:3px 12px;clip-path:polygon(0 0,100% 0,92% 100%,0 100%)}
+.card h3{font-size:1.25rem}
+.card p{font-size:.93rem}
+.card .more{margin-top:auto;font-weight:700;color:var(--crimson)}
+.card .when{font-size:.8rem;opacity:.65}
+
+/* ===== DRAWER ===== */
+.scrim{position:fixed;inset:0;background:rgba(10,20,22,.7);z-index:70;opacity:0;pointer-events:none;transition:opacity .35s}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(640px,100%);background:var(--paper);color:var(--ink);z-index:80;transform:translateX(105%) skewX(-3deg);transition:transform .5s cubic-bezier(.7,0,.2,1);padding:30px clamp(20px,4vw,44px) 50px;overflow-y:auto;border-left:10px solid var(--crimson)}
+body.open .scrim{opacity:1;pointer-events:auto}
+body.open .drawer{transform:none}
+.drawer h2{font-size:clamp(1.5rem,4vw,2.2rem);margin:14px 0}
+.drawer .body p{margin-bottom:14px;font-size:1.05rem;max-width:62ch}
+.drawer .x{position:absolute;right:16px;top:12px;background:var(--ink);color:var(--gold);border:0;width:42px;height:42px;font-size:1.3rem;font-weight:700}
+.drawer .script{font-family:ui-monospace,Menlo,monospace;font-size:.92rem;background:var(--cream);padding:12px 16px;margin-bottom:12px;border-left:5px solid var(--gold)}
+
+footer{text-align:center;padding:30px 16px;border-top:3px solid var(--gold);font-size:.9rem;opacity:.85}
+footer a{color:var(--gold)}
+
+@media(max-width:860px){
+  .hero,.dossier{grid-template-columns:1fr}.collage{order:-1;height:340px}
+  .stats{grid-template-columns:repeat(2,1fr)}.drop{max-width:280px}.logo span{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}.rv{opacity:1}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVIGATION (fixed top bar) ============ -->
+<nav aria-label="Main">
+  <button class="logo" data-go="home"><i></i><span>KALPITHA</span></button> <!-- ✎ EDIT: your name -->
+  <div class="tabs" role="tablist">
+    <button data-go="home" class="on">Home</button>
+    <button data-go="about">About Me</button>
+    <button data-go="stories">Stories</button>
+    <button data-go="works">Works &amp; Portfolio</button>
+  </div>
+</nav>
+
+<div class="wipe" id="wipe" aria-hidden="true"><b></b><b></b><b><span id="wipeTxt">Opening file…</span></b></div>
+
+<main>
+
+<!-- ============ 1. HOME / HERO ============ -->
+<section class="sec active" id="home" aria-label="Home">
+  <div class="hero">
+    <div>
+      <span class="stamp rv" style="--i:0">Top secret</span>
+      <h1 class="rv" style="--i:1"><span id="dynamic-greeting">Good evening,</span><br>Agent.</h1> <!-- ✎ EDIT: greeting -->
+      <p class="lead rv" style="--i:2">I'm <b>Kalpitha</b>, a writer on a mission to turn ideas into words people actually read. Blogs that rank, newsletters that get opened, press releases that get picked up, scripts that hold attention, and stories that keep you up past midnight.</p> <!-- ✎ EDIT: intro -->
+      <div class="badges rv" style="--i:3"> <!-- ✎ EDIT: badges -->
+        <span class="badge">SEO Writer</span><span class="badge">Fiction Author</span><span class="badge">Script Writer</span><span class="badge">Available for missions</span>
+      </div>
+      <div class="cta rv" style="--i:4">
+        <a class="btn" href="#works" data-go="works">Open case files</a>
+        <a class="btn alt" href="#stories" data-go="stories">Read my stories</a>
+      </div>
+    </div>
+    <div class="collage rv" style="--i:2" aria-hidden="true">
+      <div class="moon"></div>
+      <div class="pn pn1"><span>Case 01:<br>Blogs that rank</span></div>
+      <div class="pn pn2"><span>Case 02:<br>Stories that stay</span></div>
+      <div class="pn pn3"><span>Case 03:<br>Scripts that sell</span></div>
+      <span class="stamp">Approved</span>
+      <span class="spark" style="left:2%;top:46%">✦</span><span class="spark" style="right:4%;bottom:10%;animation-delay:-1s">✦</span><span class="spark" style="left:46%;top:2%;animation-delay:-2s;font-size:1.2rem">✦</span>
+    </div>
+  </div>
+  <div class="ticker rv" style="--i:6" aria-hidden="true"><div> <!-- ✎ EDIT: ticker text -->
+    <span>★ SEO BLOGS</span><span>★ LINKEDIN NEWSLETTERS</span><span>★ PRESS RELEASES</span><span>★ VIDEO SCRIPTS</span><span>★ WATTPAD FICTION</span><span>★ SEO BLOGS</span><span>★ LINKEDIN NEWSLETTERS</span><span>★ PRESS RELEASES</span><span>★ VIDEO SCRIPTS</span><span>★ WATTPAD FICTION</span>
+  </div></div>
+</section>
+
+<!-- ============ 2. ABOUT ME / AGENT DOSSIER ============ -->
+<section class="sec" id="about" aria-label="About me">
+  <div class="sec-head rv" style="--i:0"><span class="tag">Agent dossier</span><h2>About Me</h2></div>
+  <div class="dossier rv" style="--i:1">
+    <span class="stamp">Confidential</span>
+    <!-- ✎ PHOTO: put Kalpi.jpg (or Kalpi.png) in the same folder as index.html -->
+<div class="drop photo" id="drop" role="img" aria-label="Photo of Kalpi">
+  <span id="dropTxt">Photo loading…</span>
+</div>
+    <div>
+      <h3>Kalpitha RB</h3> <!-- ✎ EDIT -->
+      <dl class="file"> <!-- ✎ EDIT: file details -->
+        <dt>Codename</dt><dd>Mira</dd>
+        <dt>Occupation</dt><dd>Content writer &amp; fiction author</dd>
+        <dt>Based in</dt><dd>Bangalore, India</dd>
+        <dt>Status</dt><dd>Open to new missions</dd>
+      </dl>
+      <p>I’m a writer who notices the quiet details most people walk right past; the pauses in a conversation, the small habits that give someone away, and the unspoken feelings sitting between the lines. Whether I’m crafting brand copy or building fictional worlds, I write to make readers pause and actually feel something.</p> <!-- ✎ EDIT -->
+      <p>My field experience started with four months of freelancing, where I scripted reels and designed carousels for a fitness coach, learning how to hook an audience in seconds. Right now, I’m wrapping up a four-month content writing internship at a digital marketing agency, writing everything from Meta ad copies and website pages to blogs, LinkedIn newsletters, and press releases. What sets my writing apart is that I don't write for algorithms; I write like a real person talking to another person, choosing genuine emotion and sharp observation over recycled marketing buzzwords.
+</p> <!-- ✎ EDIT -->
+      <p>When I’m off the clock, my current obsession is tearing through crime thriller novels, though I still reach for a slice-of-life story every now and then, like a warm sunny day breaking through a harsh winter. Outside of reading and writing, I’m always up for an art-based challenge or chasing down a brand-new hobby. I genuinely love creating things and learning from scratch, even if I’m nowhere near perfect at them yet.
+</p> <!-- ✎ EDIT -->
+      <div class="skills"><span>Content Strategy</span><span>Long-form</span><span>Copywriting</span><span>Storytelling</span><span>Scriptwriting</span></div> <!-- ✎ EDIT: skills -->
+      <p style="margin-top:18px"><a href="mailto:kalpitharb04@gmail.com" class="btn" style="font-size:.95rem">Send a message</a></p> <!-- ✎ EDIT: email -->
+    </div>
+  </div>
+  <!-- ✎ EDIT: change data-n (the number) and the label for each counter -->
+  <div class="stats">
+    <div class="stat rv" style="--i:3"><strong data-n="50000">0</strong>words written</div>
+    <div class="stat rv" style="--i:4"><strong data-n="300">0</strong>cups of coffee</div>
+    <div class="stat rv" style="--i:5"><strong data-n="15">0</strong>stories published</div>
+    <div class="stat rv" style="--i:6"><strong data-n="10">0</strong>happy clients</div>
+  </div>
+</section>
+
+<!-- ============ 3. STORIES / WATTPAD ============ -->
+<section class="sec" id="stories" aria-label="Stories">
+  <div class="sec-head rv" style="--i:0"><span class="tag">Fiction archive</span><h2>Stories</h2>
+    <p>
+I have been writing fiction since late 2025. My stories live on Wattpad, where readers follow new chapters as they drop. I love diving into the sharp suspense of thrillers, the electric tension of erotica, the dark chills of horror, and character-driven fiction, with a special soft spot for slice-of-life moments and the playful, undercover Spy x Family energy that inspired the entire vibe of this portfolio. If you are new here, start with the late-night horror shorts or the pulse-pounding urban legends first!</p> <!-- ✎ EDIT -->
+  </div>
+  <div class="shelf" id="shelf"></div>
+  <p class="rv" style="--i:8;margin-top:34px"><a class="btn alt" href="https://www.wattpad.com/user/Kyomiilikestoread" target="_blank" rel="noopener">Visit my Wattpad profile</a></p> <!-- ✎ EDIT: Wattpad profile link -->
+</section>
+
+<!-- ============ 4. WORKS & PORTFOLIO ============ -->
+<section class="sec" id="works" aria-label="Works and portfolio">
+  <div class="sec-head rv" style="--i:0"><span class="tag">Client case files</span><h2>Works &amp; Portfolio</h2>
+    <p>Pick a category, then open any file to read the piece right here.</p></div>
+  <div class="filters rv" style="--i:1" id="filters" role="tablist"></div>
+  <div class="grid" id="grid"></div>
+</section>
+</main>
+
+<footer>© <span id="yr"></span> Kalpii. Mission complete. <a href="mailto:kalpitharb04@gmail.com">Contact</a> · <a href="https://www.wattpad.com/user/Kyomiilikestoread" target="_blank" rel="noopener">Wattpad</a> · <a href="https://www.linkedin.com/in/kalpitha-r-b-509a86350/" target="_blank" rel="noopener">LinkedIn</a></footer> <!-- ✎ EDIT: links -->
+
+<!-- DRAWER (opens when a work is clicked) -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Work preview" aria-hidden="true">
+  <button class="x" id="close" aria-label="Close preview">✕</button>
+  <div id="dBody"></div>
+</aside>
+
+<script>
+/* =====================================================================
+   ✎ YOUR CONTENT LIVES HERE. Edit, copy or delete items; the site updates itself.
+   ===================================================================== */
+
+// ---- STORIES (Section 3) ----
+// color options: "#f0b429" gold, "#cf2c45" crimson, "#f28fa8" pink, "#58b0e3" sky, "#3fae92" mint
+const STORIES = [
+  {title:"2:45 AM",  genre:"Horror",   chapters:1, status:"Completed",   color:"#f28fa8", blurb:"At 2:45 AM, a late-night gaming session turns chilling when a best friend texts to ask why you’re standing outside his house, calling his name.", url:"https://www.wattpad.com/story/419476258-2-45-am"},
+  {title:"What The Tape Remembered",  genre:"Mystery",   chapters:8, status:"Completed", color:"#58b0e3", blurb:"A sound restorer finds a murder hidden in an old tape. The killer is under the same roof, and the only clue is a sound only she can hear.", url:"https://www.wattpad.com/story/419422621-what-the-tape-remembered"},
+  {title:"Breathless Confessions",genre:"Romance",   chapters:25, status:"Ongoing",   color:"#3fae92", blurb:"A collection of intimate encounters between fictional strangers, exploring desire, tension, and the blurred lines of attraction. Each story offers a glimpse behind closed doors where unspoken cravings take over.", url:"https://www.wattpad.com/story/406706772-breathless-confessions"},
+  {title:"The Head", genre:"Mythical",  chapters:2, status:"Completed", color:"#f0b429", blurb:"During a tense home delivery, an ancient folklore entity hunts for the newborn, kept at bay only by three strict rules. When the pregnant woman’s sister, Maya, accidentally breaks one, she becomes the target of what’s waiting in the dark.", url:"https://www.wattpad.com/story/000000"},
+{title: "A Love That Stayed", genre:"Romantic One-Sided", chapters:19, status:"Completed", color:"#BC96E6", blurb:"Falling in love with a best friend who is already taken means quietly playing pretend, until one crossed boundary changes everything. Now, he has to face the painful truth: either let go of his feelings or lose her friendship forever.", url:"https://www.wattpad.com/story/405465819-a-love-that-stayed"}
+];
+
+// ---- WORKS (Section 4) ----
+// cat must be one of: seo | newsletter | press | script
+// body = array of paragraphs (for scripts, start lines with "SCENE:", "VO:", etc.)
+const CATS = [
+  {id:"all",label:"All files"},{id:"seo",label:"SEO Blogs"},{id:"newsletter",label:"LinkedIn Newsletters"},
+  {id:"press",label:"Press Releases"},{id:"script",label:"Video Scripts"}
+];
+const COL = {seo:"#cf2c45",newsletter:"#58b0e3",press:"#3fae92",script:"#f0b429"};
+const WORKS = [
+  {cat:"seo",client:"Padel Pro India",title:"Why Padel is Becoming Popular Among Millennials and GenZ in India",date:"Oct 2026",excerpt:"[One-sentence summary of the blog and the keyword it targeted.]",file:"",link:"https://padelproindia.com/blogs/why-padel-is-becoming-popular-among-millennials-and-gen-z-in-india"},
+{cat:"seo",client:"Padel Pro India",title:"How Matchmaking Makes Padel More Fun and Engaging for Every Player",date:"Sept 2026",excerpt:"[One-sentence summary of the blog and the keyword it targeted.]",file:"",link:"https://padelproindia.com/blogs/how-matchmaking-makes-padel-more-fun-and-engaging-for-every-player"},
+  {cat:"seo",client:"Padel Pro Malaysia",title:"A New Padel Destination fpr Singapore Players is waiting in Johor Bahru",date:"Oct 2026",excerpt:"[One-sentence summary of the blog and the keyword it targeted.]",file:"",link:"https://padelpro.my/blogs/a-new-padel-destination-for-singapore-players-is-waiting-in-johor-bahru"},
+  {cat:"seo",client:"Coldwell Bankers",title:"Which Bangalore Areas Have Good Connectivity and Residential Growth",date:"Oct 2026",excerpt:"[One-sentence summary of the blog and the keyword it targeted.]",file:"",link:"https://cbsouthindia.com/bangalore-areas-good-connectivity-residential-growth/"},
+{cat:"seo", client:"Coldwell Bankers", title:"Is Mysore the Next Big Real Estate Market in Karnataka?", date:"Sept 2026",excerpt:"[one-liner here]", file:"",link:"https://cbsouthindia.com/real-estate-in-mysore-market-growth/"},
+{cat:"seo",client:"Chattels Designs",title:"Japandi Interior Design Ideas for a Calm and Mindful Home",date:"Oct 2026",excerpt:"This blog explores how Bangalore homeowners can transform busy urban apartments into tranquil retreats using Japandi interior design, highlighting practical tips on earthy color palettes, low-profile furniture, and clutter-free storage.",file:"Contents/blogs/japandi.txt",link:"https://chattelsdesign.com/blogs/japandi-interior-design-ideas-calm-home/"},
+{cat:"seo",client:"Chattels Designs",title:"Balcony Garden and Seating Design Ideas for Urban Homes",date:"Oct 2026",excerpt:"Focused on the keyword apartment balcony design, this blog shares practical ways for Bangalore homeowners to transform overlooked balconies into cozy retreats through smart space-saving layouts, vertical gardens, weatherproof seating, and warm evening lighting.",file:"Content/blogs/BalconyGarden",link:"https://chattelsdesign.com/blogs/balcony-garden-seating-design-ideas/"},
+  {cat:"newsletter",client:"Chattels Design",title:"The End of All-White Kitchen",date:"Oct 2026",excerpt:"Why Kitchens are Getting Warmer, Richer, and More Personal",file:"",link:"https://www.linkedin.com/pulse/why-kitchens-getting-warmer-richer-more-personal-chattelsdesign-nu9kc"},
+  {cat:"newsletter",client:"Chattels Design",title:"Interior Design Is More Than What Meets the Eye",date:"Sept 2026",excerpt:"Interior Design is About More Than Just Making Home Look Good",file:"",link:"https://www.linkedin.com/pulse/interior-design-more-than-just-making-home-look-good-chattelsdesign-bdixf"},
+{cat:"newsletter",client:"Coldwell Bankers",title:"2 Crore. Bengaluru, Chennai, or Dubai?",date:"Oct 2026",excerpt:"https://www.linkedin.com/pulse/one-investment-different-goals-markets-cb-area-develper-south-zone-v0elf/?trackingId=0wuYJCQlglLBCP7lg6S1DA%3D%3D",file:"",link:"https://www.linkedin.com/pulse/one-investment-different-goals-markets-cb-area-develper-south-zone-v0elf/?trackingId=0wuYJCQlglLBCP7lg6S1DA%3D%3D"},
+{cat:"newsletter",client:"Coldwell Bankers",title:"Two Identical 3 BHKs. Same Corridor. One Appraised 25Lakhs Higher.",date:"Nov 2026",excerpt:"Price vs. Value: The ₹25 Lakh Gap Most Homebuyers and Sellers Never See",file:"",link:"https://www.linkedin.com/pulse/price-vs-value-25-lakh-gap-most-homebuyers-1h8ec/?trackingId=PoErlKTdWm8imDW1HLay%2Fw%3D%3D"},
+  {cat:"press",client:"Peopleworks",title:"Peopleworks Shares Insights on the Future HR Automation.",date:"July 2026",excerpt:"[One-sentence summary of the announcement.]",body:["FOR IMMEDIATE RELEASE","[City, Date] – [Opening paragraph with who, what, when, where, why.]","[Quote from a company spokesperson.]","About [Company]: [Boilerplate paragraph.]"],link:"https://thewire.in/ptiprnews/peopleworks-shares-insights-on-the-future-of-hr-automation-and-the-evolving-role-of-human-resources"},
+  {cat:"press",client:"Peopleworks",title:"Peopleworks Marks Four Decades in HR Technology",date:"Sep 2026",excerpt:"[One-sentence summary of the announcement.]",file:"",link:"https://thewire.in/ptiprnews/peopleworks-marks-four-decades-in-hr-technology-reinforcing-the-depth-and-scale-behind-indias-hire-to-retire-hrms-leadership"},
+  {cat:"script",client:"Client Name H",title:"60-Second Explainer: How the App Works",date:"Jan 2026",excerpt:"[One-sentence summary of the video and its goal.]",body:["SCENE: [Opening shot description]","VO: [Voice-over line.]","SCENE: [Next shot description]","VO: [Voice-over line.]","CTA: [Closing call to action.]"],link:""},
+  {cat:"script",client:"Client Name I",title:"YouTube Script: Behind the Brand",date:"Aug 2025",excerpt:"[One-sentence summary of the video and its goal.]",body:["SCENE: [Opening shot description]","HOST: [Spoken line.]","SCENE: [Next shot description]","HOST: [Spoken line.]"],link:""}
+];
+
+/* =====================================================================
+   SITE ENGINE (you can ignore everything below)
+   ===================================================================== */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const LABEL={home:"Opening HQ…",about:"Pulling your dossier…",stories:"Visiting the archive…",works:"Opening case files…"};
+let current="home",busy=false;
+
+/* Page navigation with the slanted-panel wipe */
+function go(id,instant){
+  if(!$("#"+id)||(id===current&&!instant)||busy)return;
+  const swap=()=>{
+    $$(".sec").forEach(s=>s.classList.toggle("active",s.id===id));
+    $$(".tabs button").forEach(b=>b.classList.toggle("on",b.dataset.go===id));
+    current=id;window.scrollTo(0,0);
+    if(id==="about")counters();
+    if(location.hash!=="#"+id)history.replaceState(null,"","#"+id);
+  };
+  if(instant||matchMedia("(prefers-reduced-motion:reduce)").matches){swap();return}
+  busy=true;$("#wipeTxt").textContent=LABEL[id];
+  const w=$("#wipe");w.classList.remove("run");void w.offsetWidth;w.classList.add("run");
+  setTimeout(swap,480);
+  setTimeout(()=>{w.classList.remove("run");busy=false},1150);
+}
+document.addEventListener("click",e=>{const t=e.target.closest("[data-go]");if(t){e.preventDefault();go(t.dataset.go)}});
+addEventListener("hashchange",()=>go(location.hash.slice(1)||"home"));
+
+/* Counters */
+function counters(){
+  $$("[data-n]").forEach(el=>{
+    const n=+el.dataset.n,t0=performance.now(),d=1600;
+    (function step(t){const p=Math.min((t-t0)/d,1),e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(n*e).toLocaleString()+(p===1?"+":"");
+      if(p<1)requestAnimationFrame(step)})(t0);
+  });
+}
+
+/* Photo dropzone */
+/* Profile photo: loads from the same folder as index.html */
+const drop=$("#drop");
+function loadPhoto(names){
+  const name=names.shift(); if(!name)return;
+  const img=new Image();
+  img.onload=()=>{drop.style.backgroundImage=`url(${name})`;drop.classList.add("loaded");$("#dropTxt").style.display="none"};
+  img.onerror=()=>loadPhoto(names);   // tries the next file name
+  img.src=name;
+}
+loadPhoto(["Kalpi.jpg","Kalpi.png","Kalpi.jpeg"]);
+
+/* Stories shelf */
+$("#shelf").innerHTML=STORIES.map((s,i)=>`
+  <article class="book rv" style="--c:${s.color};--i:${i+1}">
+    <div class="cover"><span class="stamp">${esc(s.status)}</span><h3>${esc(s.title)}</h3></div>
+    <div class="binfo"><div class="meta"><span>${esc(s.genre)}</span><span>${s.chapters} chapters</span></div>
+    <p>${esc(s.blurb)}</p><a href="${esc(s.url)}" target="_blank" rel="noopener">Read on Wattpad</a></div>
+  </article>`).join("");
+
+/* Works filters + cards */
+$("#filters").innerHTML=CATS.map((c,i)=>`<button role="tab" data-cat="${c.id}" class="${i?"":"on"}">${c.label}</button>`).join("");
+function render(cat){
+  const list=WORKS.map((w,i)=>({...w,i})).filter(w=>cat==="all"||w.cat===cat);
+  $("#grid").innerHTML=list.map((w,k)=>`
+    <button class="card" style="--c:${COL[w.cat]};animation-delay:${k*70}ms" data-i="${w.i}">
+      <span class="client">Client: ${esc(w.client)}</span>
+      <h3>${esc(w.title)}</h3><p>${esc(w.excerpt)}</p>
+      <span class="when">${CATS.find(c=>c.id===w.cat).label} · ${esc(w.date)}</span>
+      <span class="more">Open file</span>
+    </button>`).join("")||"<p>No files in this category yet.</p>";
+}
+$("#filters").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  $$("#filters button").forEach(x=>x.classList.toggle("on",x===b));render(b.dataset.cat);
+});
+render("all");
+
+/* Drawer */
+let lastFocus;
+const TXT_CACHE={};
+async function loadBody(w){
+  if(!w.file)return w.body||[];                      // no txt linked: use the old body
+  if(TXT_CACHE[w.file])return TXT_CACHE[w.file];
+  try{
+    const r=await fetch(encodeURI(w.file));          // encodeURI handles spaces in folder names
+    if(!r.ok)throw new Error(r.status);
+    const lines=(await r.text()).split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+    return TXT_CACHE[w.file]=lines;                  // each non-empty line = one paragraph
+  }catch(err){
+    console.warn("Could not load",w.file,err);
+    return w.body||["[Preview could not be loaded. Use the live link below.]"];
+  }
+}
+async function openDrawer(i){
+  const w=WORKS[i],isS=w.cat==="script";
+  const head=`<span class="client">Client: ${esc(w.client)}</span><h2>${esc(w.title)}</h2>
+   <p class="when" style="margin-bottom:18px;opacity:.65">${CATS.find(c=>c.id===w.cat).label} · ${esc(w.date)}</p>`;
+  const foot=w.link?`<p><a class="btn" href="${esc(w.link)}" target="_blank" rel="noopener">View live version</a></p>`:"";
+  $("#dBody").innerHTML=head+`<div class="body"><p>Loading file…</p></div>`+foot;   // opens instantly
+  lastFocus=document.activeElement;document.body.classList.add("open");
+  $("#drawer").setAttribute("aria-hidden","false");$("#close").focus();
+  const lines=await loadBody(w);
+  $("#dBody").innerHTML=head+`<div class="body">${lines.map(p=>isS?`<div class="script">${esc(p)}</div>`:`<p>${esc(p)}</p>`).join("")}</div>`+foot;
+}
+function closeDrawer(){document.body.classList.remove("open");$("#drawer").setAttribute("aria-hidden","true");lastFocus&&lastFocus.focus()}
+$("#grid").addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openDrawer(+c.dataset.i)});
+$("#close").onclick=closeDrawer;$("#scrim").onclick=closeDrawer;
+addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer()});
+
+$("#yr").textContent=new Date().getFullYear();
+go(location.hash.slice(1)||"home",true);
+  const hour = new Date().getHours();
+  const greetingEl = document.getElementById('dynamic-greeting');
+  if (hour < 12) {
+    greetingEl.textContent = "Good morning,";
+  } else if (hour < 17) {
+    greetingEl.textContent = "Good afternoon,";
+  } else {
+    greetingEl.textContent = "Good evening,";
+  }
+</script>
+</body>
+</html>
