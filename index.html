@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kalpitha | Writer · Storyteller · Content Agent</title>
-<meta name="description" content="Portfolio of Kalpii: SEO blogs, LinkedIn newsletters, press releases, video scripts and Wattpad fiction.">
+<meta name="description" content="Portfolio of Kalpii: SEO blogs, LinkedIn newsletters, press releases, and Wattpad fiction.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -183,7 +183,7 @@ footer a{color:var(--gold)}
     <div>
       <span class="stamp rv" style="--i:0">Top secret</span>
       <h1 class="rv" style="--i:1"><span id="dynamic-greeting">Good evening,</span><br>Agent.</h1> <!-- ✎ EDIT: greeting -->
-      <p class="lead rv" style="--i:2">I'm <b>Kalpitha</b>, a writer on a mission to turn ideas into words people actually read. Blogs that rank, newsletters that get opened, press releases that get picked up, scripts that hold attention, and stories that keep you up past midnight.</p> <!-- ✎ EDIT: intro -->
+      <p class="lead rv" style="--i:2">I'm <b>Kalpitha</b>, a writer on a mission to turn ideas into words people actually read. Blogs that rank, newsletters that get opened, press releases that get picked up, carousels that stop the scroll, and stories that keep you up past midnight.</p> <!-- ✎ EDIT: intro -->
       <div class="badges rv" style="--i:3"> <!-- ✎ EDIT: badges -->
         <span class="badge">SEO Writer</span><span class="badge">Fiction Author</span><span class="badge">Script Writer</span><span class="badge">Available for missions</span>
       </div>
@@ -202,7 +202,7 @@ footer a{color:var(--gold)}
     </div>
   </div>
   <div class="ticker rv" style="--i:6" aria-hidden="true"><div> <!-- ✎ EDIT: ticker text -->
-    <span>★ SEO BLOGS</span><span>★ LINKEDIN NEWSLETTERS</span><span>★ PRESS RELEASES</span><span>★ VIDEO SCRIPTS</span><span>★ WATTPAD FICTION</span><span>★ SEO BLOGS</span><span>★ LINKEDIN NEWSLETTERS</span><span>★ PRESS RELEASES</span><span>★ VIDEO SCRIPTS</span><span>★ WATTPAD FICTION</span>
+    <span>★ SEO BLOGS</span><span>★ LINKEDIN NEWSLETTERS</span><span>★ PRESS RELEASES</span><span>★ INSTAGRAM CAROUSELS</span><span>★ WATTPAD FICTION</span><span>★ SEO BLOGS</span><span>★ LINKEDIN NEWSLETTERS</span><span>★ PRESS RELEASES</span><span>★ INSTAGRAM CAROUSELS</span><span>★ WATTPAD FICTION</span>
   </div></div>
 </section>
 
@@ -289,9 +289,9 @@ const STORIES = [
 // body = array of paragraphs (for scripts, start lines with "SCENE:", "VO:", etc.)
 const CATS = [
   {id:"all",label:"All files"},{id:"seo",label:"SEO Blogs"},{id:"newsletter",label:"LinkedIn Newsletters"},
-  {id:"press",label:"Press Releases"},{id:"script",label:"Video Scripts"}
+  {id:"press",label:"Press Releases"},{id:"carousel",label:"Instagram Carousels"},{id:"adcopy",label:"Meta AdCopy"}
 ];
-const COL = {seo:"#cf2c45",newsletter:"#58b0e3",press:"#3fae92",script:"#f0b429"};
+const COL = {seo:"#cf2c45",newsletter:"#58b0e3",press:"#3fae92",carousel:"#f0b429",adcopy:"#f28fa8"};
 const WORKS = [
   {cat:"seo",client:"Padel Pro India",title:"Why Padel is Becoming Popular Among Millennials and GenZ in India",date:"Oct 2026",excerpt:"This blog explains why padel is booming among millennials and Gen Z in India, especially in Bangalore, as a social, low-impact fitness alternative to the gym, and promotes Padel Pro India’s courts and coaching, targeting the keyword “padel coaching in Bangalore.”",file:"Contents/blogs/GenzPadel.txt",link:"https://padelproindia.com/blogs/why-padel-is-becoming-popular-among-millennials-and-gen-z-in-india"},
 {cat:"seo",client:"Padel Pro India",title:"How Matchmaking Makes Padel More Fun and Engaging for Every Player",date:"Sept 2026",excerpt:"This blog explains how matchmaking solves the problem of finding players for padel in Bangalore by pairing players of similar skill, and invites readers to book through Padel Pro on Hudle or WhatsApp, targeting the keyword “padel tennis club.”",file:"Contents/blogs/MatchmakingPadel.txt",link:"https://padelproindia.com/blogs/how-matchmaking-makes-padel-more-fun-and-engaging-for-every-player"},
@@ -306,8 +306,12 @@ const WORKS = [
 {cat:"newsletter",client:"Coldwell Bankers",title:"Two Identical 3 BHKs. Same Corridor. One Appraised 25Lakhs Higher.",date:"Nov 2026",excerpt:"Price vs. Value: The ₹25 Lakh Gap Most Homebuyers and Sellers Never See",file:"Contents/Linkedinnewsletters/PricevsValue.txt",link:"https://www.linkedin.com/pulse/price-vs-value-25-lakh-gap-most-homebuyers-1h8ec/?trackingId=PoErlKTdWm8imDW1HLay%2Fw%3D%3D"},
   {cat:"press",client:"Peopleworks",title:"Peopleworks Shares Insights on the Future HR Automation.",date:"July 2026",excerpt:"PeopleWorks outlines how AI, mobile-first tools and payroll automation are turning HR into a strategic partner, and presents itself as a pioneer in HRMS software.",file:"Contents/PressReleases/LeadingHRtechPR.txt",link:"https://thewire.in/ptiprnews/peopleworks-shares-insights-on-the-future-of-hr-automation-and-the-evolving-role-of-human-resources"},
   {cat:"press",client:"Peopleworks",title:"Peopleworks Marks Four Decades in HR Technology",date:"Sep 2026",excerpt:"PeopleWorks marks four decades in Indian HR technology, highlighting its industry-specific depth, scalability from small teams to 20,000-employee enterprises, and 25+ module Hire-to-Retire platform.",file:"Contents/PressReleases/PWMarksFourDecades.txt",link:"https://thewire.in/ptiprnews/peopleworks-marks-four-decades-in-hr-technology-reinforcing-the-depth-and-scale-behind-indias-hire-to-retire-hrms-leadership"},
-  {cat:"script",client:"Client Name H",title:"60-Second Explainer: How the App Works",date:"Jan 2026",excerpt:"[One-sentence summary of the video and its goal.]",body:["SCENE: [Opening shot description]","VO: [Voice-over line.]","SCENE: [Next shot description]","VO: [Voice-over line.]","CTA: [Closing call to action.]"],link:""},
-  {cat:"script",client:"Client Name I",title:"YouTube Script: Behind the Brand",date:"Aug 2025",excerpt:"[One-sentence summary of the video and its goal.]",body:["SCENE: [Opening shot description]","HOST: [Spoken line.]","SCENE: [Next shot description]","HOST: [Spoken line.]"],link:""}
+{cat:"adcopy",client:"Coldwell Bankers",title:"Ad Copy 1",date:"Nov 2026", excerpt:"[oneline]",file:"Contents/ads/AdCopy1.txt",link:""},
+{cat:"adcopy",client:"Coldwell Bankers",title:"Ad Copy 2",date:"Nov 2026",excerpt:"[oneline]",file:"Contents/ads/AdCopy2.txt",link:""},
+{cat:"adcopy",client:"Coldwell Bankers",title:"Ad Copy 3",date:"Nov 2026",excerpt:"[oneline]",file:"Contents/ads/Adcopy3.txt",link:""},
+  {cat:"carousel",client:"Freelance",title:"Completing a Hyrox or Marathon does not qualfy you as Coach ", category:"Fitness", date:"Aug 2026",link:"https://www.instagram.com/p/DbgG1DoCdcy/?utm_source=ig_web_copy_link&cnvx=NTc4MTIwNjQ2YQ=="},
+  {cat:"carousel",client:"Freelance",title:"Slouching isn’t just ruining your back!!!",category:"Fitness",date:"Aug 2026",link:"https://www.instagram.com/p/XXXXXXXX/"},
+  {cat:"carousel",client:"Freelance",title:"he Hidden Reason You’re Aging Faster than You Think ", category:"Fitness", date:"Sept 2026",link:"https://www.instagram.com/p/XXXXXXXX/"},
 ];
 
 /* =====================================================================
@@ -371,13 +375,22 @@ $("#shelf").innerHTML=STORIES.map((s,i)=>`
 $("#filters").innerHTML=CATS.map((c,i)=>`<button role="tab" data-cat="${c.id}" class="${i?"":"on"}">${c.label}</button>`).join("");
 function render(cat){
   const list=WORKS.map((w,i)=>({...w,i})).filter(w=>cat==="all"||w.cat===cat);
-  $("#grid").innerHTML=list.map((w,k)=>`
-    <button class="card" style="--c:${COL[w.cat]};animation-delay:${k*70}ms" data-i="${w.i}">
-      <span class="client">Client: ${esc(w.client)}</span>
-      <h3>${esc(w.title)}</h3><p>${esc(w.excerpt)}</p>
-      <span class="when">${CATS.find(c=>c.id===w.cat).label} · ${esc(w.date)}</span>
-      <span class="more">Open file</span>
-    </button>`).join("")||"<p>No files in this category yet.</p>";
+  $("#grid").innerHTML=list.map((w,k)=>{
+    const badge=w.client?`<span class="client">Client: ${esc(w.client)}</span>`:"";
+    const label=CATS.find(c=>c.id===w.cat).label;
+    if(w.cat==="carousel") return `
+      <a class="card" href="${esc(w.link)}" target="_blank" rel="noopener" style="--c:${COL[w.cat]};animation-delay:${k*70}ms;text-decoration:none">
+        ${badge}<h3>${esc(w.title)}</h3>
+        <span class="when">${label} · ${esc(w.date)}</span>
+        <span class="more">View on Instagram ↗</span>
+      </a>`;
+    return `
+      <button class="card" style="--c:${COL[w.cat]};animation-delay:${k*70}ms" data-i="${w.i}">
+        ${badge}<h3>${esc(w.title)}</h3><p>${esc(w.excerpt)}</p>
+        <span class="when">${label} · ${esc(w.date)}</span>
+        <span class="more">Open file</span>
+      </button>`;
+  }).join("")||"<p>No files in this category yet.</p>";
 }
 $("#filters").addEventListener("click",e=>{
   const b=e.target.closest("button");if(!b)return;
@@ -413,7 +426,7 @@ async function openDrawer(i){
   $("#dBody").innerHTML=head+`<div class="body">${lines.map(p=>isS?`<div class="script">${esc(p)}</div>`:`<p>${esc(p)}</p>`).join("")}</div>`+foot;
 }
 function closeDrawer(){document.body.classList.remove("open");$("#drawer").setAttribute("aria-hidden","true");lastFocus&&lastFocus.focus()}
-$("#grid").addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openDrawer(+c.dataset.i)});
+$("#grid").addEventListener("click",e=>{const c=e.target.closest("button.card");if(c)openDrawer(+c.dataset.i)});
 $("#close").onclick=closeDrawer;$("#scrim").onclick=closeDrawer;
 addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer()});
 
